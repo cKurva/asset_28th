@@ -26,7 +26,7 @@
             <div :key="currentDate">
               <div
                 class="sidenavListItem"
-                
+              
                 @click="renderDetails(key, index, asset)"
                 v-for="(asset, key, index) in inverterdeviationApiData.test[
                 this.inverterCurrentPage
@@ -34,7 +34,7 @@
                 :key="index"
               >
                 <div>
-                  <div v-b-toggle="`dev${index}`" style="color:black">
+                  <div v-b-toggle="`dev${index}`" style="color:black" v-bind:class="{ active: clickedDetails === asset }">
                   {{ key.toLowerCase() | capitalize }}
                   <i
                     aria-hidden="true"
@@ -47,12 +47,12 @@
                   
                 </div>
 
-                <b-collapse v-if="Object.values(asset).length >= 1" :id="`dev${index}`">
+               <!--  <b-collapse v-if="Object.values(asset).length >= 1" :id="`dev${index}`">
                     <div class="mt-3">
                        <p><span>Actual : {{asset.actual}}</span> | 
                        <span>Total : {{asset.total}}</span></p>
                     </div>
-                 </b-collapse>
+                 </b-collapse> -->
                 
               </div>
               
@@ -193,7 +193,6 @@ export default {
       clickedDetailsVisible: false,
       clickedDetails: {},
       clickedInverter: null,
-
       inverterCurrentPage: this.inverterdeviationApiData.inverters[0],
       select: {
         selected: this.inverterdeviationApiData.inverters[0],
@@ -241,7 +240,6 @@ export default {
       return "#" + this.componentToHex(r) + this.componentToHex(g) + this.componentToHex(b);
     },
     renderDetails(keyL2, keyL3, value) {
-
       this.clickedDetailsVisible = !this.clickedDetailsVisible;
       if(this.clickedDetailsVisible == false){
         if(keyL3 == temp1){
@@ -252,7 +250,6 @@ export default {
         this.clickedDetailsVisible = !this.clickedDetailsVisible;
           this.clickedInverter = keyL2 + keyL3;
       this.clickedDetails = value;
-      
       // this.$store.dispatch("airmapStore/getKmlAPI");
       // const rgb = value.color.substring(4, value.color.length-1)
       //    .replace(/ /g, '')
@@ -288,7 +285,6 @@ export default {
       else{
         this.clickedInverter = keyL2 + keyL3;
       this.clickedDetails = value;
-      
       // this.$store.dispatch("airmapStore/getKmlAPI");
       // const rgb = value.color.substring(4, value.color.length-1)
       //    .replace(/ /g, '')
@@ -379,12 +375,17 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 .inverterListContainer {
-   max-height: calc(100vh - 280px);
-  overflow: auto;
-      box-shadow: 0px 0px 10px #d8d5d5;
+    max-height: calc(100vh - 280px);
+    overflow: auto;
+   /*  box-shadow: 0px 0px 10px #d8d5d5; */
     margin: 15px;
+   
+} 
+.sidenavListItem{
+    box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
+    border-radius: 4px;
 }
 .sideBarList {
   display: flex;
@@ -393,7 +394,9 @@ export default {
   text-align: left;
   overflow-y: auto;
 }
-
+.active{
+  font-weight: 700;
+}
 
 
 .not-collapsed + div {

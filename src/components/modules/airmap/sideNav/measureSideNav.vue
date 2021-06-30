@@ -201,6 +201,11 @@ export default {
 .measureTypeIcon {
   font-size: 1.2em;
 }
+.sidenavListItem{
+  box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
+  border-radius: 4px;
+  margin: 14px;
+}
 .sideBarDetailsContainer {
   position: absolute;
   left: 350px;

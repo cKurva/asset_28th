@@ -70,10 +70,11 @@
                 this.inverterCurrentPage
               ]"
               :key="keyL1"
+              style="padding: 0px 0px;"
             >
               <transition name="slide-fade" mode="out-in">
                 <div class="sideBarList" :key="currentInverter">
-                  <div v-b-toggle="`${currentInverter}${indexL1}L1`">
+                  <div v-b-toggle="`${currentInverter}${indexL1}L1`" class="d-flex flex-row justify-content-between">
                     <span
                       ><i
                         @click="lightning(itemL1)"
@@ -621,6 +622,7 @@ export default {
   text-transform: capitalize;
   text-align: left;
   overflow-y: auto;
+  padding: 0px !important;
 }
 .subItem1 {
   padding: 10px;

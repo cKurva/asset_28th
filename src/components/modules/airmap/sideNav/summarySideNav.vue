@@ -82,8 +82,8 @@
           <div class="clickedDetails d-flex flex-row">
             <!-- <div class="clickedItemHeader">{{ clickedDetails.sub_class }}</div> -->
             <b-list-group-item class="">
-              <b>Actual </b> {{ clickedDetails.Actual }} <br> <b>Planned 
-              </b>{{ clickedDetails.Total }}
+              Actual:  {{ clickedDetails.Actual }} <br> Planned: 
+              {{ clickedDetails.Total }}
             </b-list-group-item>
             <apexchart
               type="radialBar"

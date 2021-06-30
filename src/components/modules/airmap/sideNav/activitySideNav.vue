@@ -183,4 +183,9 @@ export default {
   border-radius: 10px;
   transition: all 1s ease-in;
 }
+.sidenavListItem{
+  box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
+  border-radius: 4px;
+  margin: 14px;
+}
 </style>

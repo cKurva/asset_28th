@@ -303,6 +303,11 @@ export default {
   text-transform: capitalize;
   text-align: left;
   overflow-y: auto;
+  box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
+}
+.sidenavListItem{
+   box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
+   border-radius: 4px;
 }
 .sideBarList > div[data-v-dd719d44]:first-child {
   display: flex;
@@ -342,6 +347,7 @@ export default {
   color: var(--dark);
   background-color: var(--light);
   box-shadow: 1px 1px var(--shadow);
+  box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
   border-radius:0px;
   transition: all 1s ease-in;
 }

@@ -177,4 +177,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.sidenavListItem{
+  box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
+  border-radius: 4px;
+  margin: 14px;
+}
+</style>

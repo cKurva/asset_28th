@@ -235,6 +235,11 @@ export default {
   align-self: center;
   cursor: pointer;
 }
+.sidenavListItem{
+  box-shadow: 0 3px 0px 0 rgb(0 0 0 / 20%);
+  border-radius: 4px;
+  margin: 14px;
+}
 .createButton {
   align-self: center;
   border-radius: 50%;
